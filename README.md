@@ -17,7 +17,7 @@ Using HTML, CSS, and JavaScript, we have built this Whack-a-Mole game based off 
 - JavaScript
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/l-135/whack-a-mole.git`
+1. Clone the repository: `git clone https://github.com/l-135/cmps3350-lab05.git`
 2. Navigate to the project directory.
 3. Open `index.html` in your preferred web browser.
 
