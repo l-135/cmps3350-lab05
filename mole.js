@@ -43,7 +43,7 @@ function setMole() {
     let mole = document.createElement("img");
     mole.src = "./Sukuna.png";
 
-    //random tile generator for Sukuna
+    //random tile generator for Sukuna!
     let num = getRandomTile();
     if (currPlantTile && currPlantTile.id == num) {
         return;
