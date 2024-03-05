@@ -43,6 +43,7 @@ function setMole() {
     let mole = document.createElement("img");
     mole.src = "./Sukuna.png";
 
+    //random tile generator for Sukuna
     let num = getRandomTile();
     if (currPlantTile && currPlantTile.id == num) {
         return;
@@ -52,6 +53,7 @@ function setMole() {
 }
 
 function setPlant() {
+    //game over function
     if (gameOver) {
         return;
     }
@@ -63,6 +65,7 @@ function setPlant() {
     let plant = document.createElement("img");
     plant.src = "./Yuji.png";
 
+    //random tile generator for Yuji
     let num = getRandomTile();
     if (currMoleTile && currMoleTile.id == num) {
         return;
@@ -72,6 +75,7 @@ function setPlant() {
 }
 
 function selectTile() {
+    //game over function
     if (gameOver) {
         return;
     }
