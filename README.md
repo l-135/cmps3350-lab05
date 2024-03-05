@@ -5,7 +5,7 @@ group project
 ![Whack-a-Mole](whack_a_sukuna_screenshot.png)
 
 ## Description
-Using HTML, CSS, and JavaScript, we have built this Whack-a-Mole game based off of the anime, Jujutsu Kaisen. The game "Whack-a-Sukuna" is played by seeing which players can score the highest by only hitting Sukuna with their cursor.
+Using HTML, CSS, and JavaScript, we have built this Whack-a-Mole game based off of the anime, Jujutsu Kaisen. The game "Whack-a-Sukuna" is played by seeing which players can score the highest by only hitting Sukuna with their cursor. there is a score tracker at the top of the screen which increments by 10 points for every sakuna that is hit. try to set a highscore and beat your friends using our leaderboard.
 
 ## Features
 - Classic Whack-a-Mole gameplay
@@ -24,6 +24,10 @@ Using HTML, CSS, and JavaScript, we have built this Whack-a-Mole game based off 
 ## How to Play
 - Click on the moles (Sukuna) as they appear to earn points.
 - Avoid clicking on Yuji Itadori, as the game will end.
+- each sukuna hit is equal to 10 points
+- once the gane ends you can enter your initials to see how you did
+  compared to other players
+- players have the option to retry as many times as they want
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
