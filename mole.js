@@ -101,7 +101,10 @@ function reset(){
     clearInterval(moleInterval);
     clearInterval(PlantInterval);
     setGame();
+    //disable reset button
+    document.getElementById("resetButton").disabled = true;
 }
+
 //game over function
 function handleGameOver(){
     if(gameOver){
@@ -113,6 +116,8 @@ function handleGameOver(){
         //function calls to display and sort leader board
         updateLeaderboard(playerInitials, score);
         displayLeaderboard();
+        //enable reset button
+        document.getElementById("resetButton").disabled = false;
     }
 }
 //creating leaderboard array

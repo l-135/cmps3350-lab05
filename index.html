@@ -13,7 +13,7 @@
 
     <body>
         <div id="banner"><h1>Whack a Sukuna</h1></div>
-        <h2 id="score">0</h2>
+        <div id = "scoreBg"><h2 id="score">0</h2></div>
 
         <!-- 3x3 -->
         <div id="board"></div>
@@ -23,7 +23,7 @@
             <ol id = "leaderboardList"></ol>
         </div>
 
-        <button onclick="reset()">Reset</button>
+        <button id="resetButton" class="restart" onclick="reset()" disabled>Reset</button>
 
     </body>
 </html>
