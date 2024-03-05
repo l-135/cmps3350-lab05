@@ -27,7 +27,7 @@ Using HTML, CSS, and JavaScript, we have built this Whack-a-Mole game based off 
 - each sukuna hit is equal to 10 points
 - once the gane ends you can enter your initials to see how you did
   compared to other players
-- players have the option to retry as many times as they want
+- players have the option to retry as many times as they want.
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
