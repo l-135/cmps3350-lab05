@@ -1,7 +1,10 @@
 let currMoleTile;
 let currPlantTile;
+let moleInterval;
+let PlantInterval;
 let score = 0;
 let gameOver = false;
+let leaderboard = [];
 
 window.onload = function() {
     setGame();
@@ -18,8 +21,8 @@ function setGame() {
 
     }
 
-    setInterval(setMole, 1000); //1000 milliseconds = 1 seconds
-    setInterval(setPlant, 2000); //2000 milliseconds = 2 seconds
+    moleInterval = setInterval(setMole, 1000); //1000 milliseconds = 1 seconds
+    PlantInterval = setInterval(setPlant, 2000); //2000 milliseconds = 2 seconds
 }
 
 function getRandomTile() {
@@ -67,6 +70,7 @@ function setPlant() {
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
 }
+
 function selectTile() {
     if (gameOver) {
         return;
@@ -79,5 +83,58 @@ function selectTile() {
     else if (this == currPlantTile) {
         document.getElementById("score").innerText = "GAME OVER: " + score.toString();
         gameOver = true;
+        handleGameOver();
     }
+}
+
+//reset button to restart game
+function reset(){
+    score = 0;
+    gameOver = false;
+    document.getElementById("score").innerText="0";
+    document.getElementById("leaderboardSection").style.display = "none";
+    document.getElementById("board").style.display = "flex";
+    clearInterval(moleInterval);
+    clearInterval(PlantInterval);
+    setGame();
+}
+//game over function
+function handleGameOver(){
+    if(gameOver){
+        //hide game and prompt player for initials
+        document.getElementById("board").innerHTML = "";
+        document.getElementById("board").style.display = "none";
+        document.getElementById("leaderboardSection").style.display ="flex";
+        const playerInitials = prompt("Enter your Initials:");
+        //function calls to display and sort leader board
+        updateLeaderboard(playerInitials, score);
+        displayLeaderboard();
+    }
+}
+//creating leaderboard array
+function updateLeaderboard(playerInitials, playerScore){
+    //create player object from initials and score
+    const player = {initials: playerInitials, score: playerScore};
+    //push player object into leaderboard array
+    leaderboard.push(player);
+    //sort through objects based on score
+    leaderboard.sort((a,b) => b.score - a.score);
+    // only keep top 3
+    if (leaderboard.length > 3){
+        leaderboard.pop();
+    }
+}
+//displays the leaderboard
+function displayLeaderboard(){
+    //clear previous leaderboard list items
+    const topPlayers = document.getElementById("leaderboardList");
+    topPlayers.innerHTML = "";
+    //loop to traverse leaderboard array
+    leaderboard.forEach((player,index) => {
+        const position = index + 1;
+        const listItem = document.createElement("li");
+        //display list items
+        listItem.textContent = `${position}: ${player.initials} - ${player.score} pts`;
+        topPlayers.appendChild(listItem);
+    });
 }
